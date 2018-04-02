@@ -22,11 +22,11 @@ gulp.task('styles', () => {
   ];
 
   return gulp.src('src/**/*.scss')
-    .pipe($.sourcemaps.init())
     .pipe($.sass({
       precision: 10
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe($.cssnano())
     .pipe(gulp.dest('dist'));
 });
 
