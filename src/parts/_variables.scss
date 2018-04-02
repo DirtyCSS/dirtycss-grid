@@ -1,12 +1,18 @@
+// -----------------------------------------------------------------------------
 // column count
 $grid-columns: 12 !default;
 
+// -----------------------------------------------------------------------------
 // Gutter types
+$gutter-0: 0 !default;
 $gutter-sm: 5px !default;
 $gutter-md: 15px !default;
 $gutter-lg: 30px !default;
+$gutter-xl: 50px !default;
 
+// -----------------------------------------------------------------------------
 // Media breakpoints
+$xs: 0;
 $sm: 576px;
 $md: 768px;
 $lg: 992px;

@@ -1,11 +1,131 @@
+// -----------------------------------------------------------------------------
 // Base row settings
 .row {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  margin-left: -$gutter-md;
-  margin-right: -$gutter-md;
+  @include layout-gutter(row, $gutter-md);
 }
 
+// -----------------------------------------------------------------------------
 // Row modifications
 // -- Gutter modifications
+// --- SM: 5px;
+.row--sm {
+  @include layout-gutter(row, $gutter-sm);
+}
+
+// --- MD: 15px;
+.row--md {
+  @include layout-gutter(row, $gutter-md);
+}
+
+// --- lg: 30px;
+.row--lg {
+  @include layout-gutter(row, $gutter-lg);
+}
+
+// --- xl: 50px;
+.row--lg {
+  @include layout-gutter(row, $gutter-xl);
+}
+
+// -- no gutter: 0px;
+.row--no-gutter {
+  @include layout-gutter(row, $gutter-0);
+}
+
+// -----------------------------------------------------------------------------
+// -- Alignment modifications
+// --- vertical align top
+.row--top {
+  align-items: flex-start;
+}
+
+// --- vertical align middle
+.row--middle {
+  align-items: center;
+}
+
+// --- vertical align bottom
+.row--bottom {
+  align-items: flex-end;
+}
+
+// --- horizontal align start
+.row--left {
+  justify-content: flex-start;
+}
+
+// --- horizontal align center
+.row--center {
+  justify-content: center;
+}
+
+// --- horizontal align end
+.row--right {
+  justify-content: flex-end;
+}
+
+// -- space between
+.row--space-between {
+  justify-content: space-between;
+}
+
+// -- space around
+.row--space-between {
+  justify-content: space-around;
+}
+
+// -- row reverse
+.row--reverse {
+  flex-direction: row-reverse;
+}
+
+
+
+// -----------------------------------------------------------------------------
+// Base col settings
+.col {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+// Generate grid сols
+// -- xs
+@include col-generator(xs, $xs);
+
+// -- sm
+@include col-generator(sm, $sm);
+
+// -- md
+@include col-generator(md, $md);
+
+// -- lg
+@include col-generator(lg, $lg);
+
+// -- xl
+@include col-generator(xl, $xl);
+
+// -----------------------------------------------------------------------------
+// Col modificators
+// -- Align self top
+.col--top {
+  align-self: flex-start;
+}
+
+// -- Align self middle
+.col--middle {
+  align-self: center;
+}
+
+// -- Align self bottom
+.col--bottom {
+  align-self: flex-end;
+}
+
+// -----------------------------------------------------------------------------
+// Col orders
+@include col-order-generator;

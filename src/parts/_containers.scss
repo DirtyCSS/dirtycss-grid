@@ -1,0 +1,27 @@
+// -----------------------------------------------------------------------------
+// Base container styles
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  @include layout-gutter(container, $gutter-md);
+  box-sizing: border-box;
+}
+
+// -----------------------------------------------------------------------------
+// Container modifications
+// -- Strict container
+.container--strict {
+  @include media-sm {
+    width: round($sm * .95);
+  }
+  @include media-md {
+    width: round($md * .95);
+  }
+  @include media-lg {
+    width: round($lg * .95);
+  }
+  @include media-xl {
+    width: round($xl * .95);
+  }
+}

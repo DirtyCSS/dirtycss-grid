@@ -1,4 +1,5 @@
-// Generate mixing for media();
+// -----------------------------------------------------------------------------
+// media() mixins;
 @mixin media-sm {
   @media (min-width: $sm) {
     @content;
@@ -17,5 +18,56 @@
 @mixin media-xl {
   @media (min-width: $xl) {
     @content;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Gutter mixin for .row and .col
+@mixin layout-gutter($type, $gutter) {
+  @if $type == row {
+    margin-left: -$gutter;
+    margin-right: -$gutter;
+    > [class^="col"] {
+      padding-left: $gutter;
+      padding-right: $gutter;
+    }
+  } @else {
+    padding-left: $gutter;
+    padding-right: $gutter;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Set properties to cols
+@mixin col-setter($col-prefix, $col-number) {
+  .col--#{$col-prefix}-#{$col-number} {
+    flex: 0 0 (100% / $grid-columns * $col-number);
+    max-width: 100% / $grid-columns * $col-number;
+    box-sizing: border-box;
+  }
+}
+
+// Col builder
+@mixin col-generator($prefix, $breakpoint) {
+  @if $prefix == xs {
+    @for $i from 1 through $grid-columns {
+      @include col-setter($prefix, $i);
+    }
+  } @else {
+    @media (min-width: $breakpoint) {
+      @for $i from 1 through $grid-columns {
+        @include col-setter($prefix, $i);
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Col orders generator
+@mixin col-order-generator {
+  @for $i from 1 through $grid-columns {
+    .col--order-#{$i} {
+      order: $i;
+    }
   }
 }

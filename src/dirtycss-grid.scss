@@ -1,10 +1,9 @@
-/*
-** Include variables & mixins
- */
+// -----------------------------------------------------------------------------
+// Include variables & mixins
 @import "./parts/variables";
 @import "./parts/mixins";
-/*
-** Include grid parts
- */
-@import "./parts/grid";
+
+// -----------------------------------------------------------------------------
+// Include grid parts
 @import "./parts/containers";
+@import "./parts/grid";
