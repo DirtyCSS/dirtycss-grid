@@ -48,5 +48,5 @@ gulp.task('serve', ['pug', 'styles'], () => {
 });
 
 gulp.task('clean', () =>
-  del(['dist/*', 'example/dirtycss-grid.css'], {dot: true})
+  del(['dist/*', 'example/*'], {dot: true})
 );
