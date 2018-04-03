@@ -10,3 +10,15 @@ In the near future we will add new features on grid layouts.
 * `12 columns system` - out grid have classic 12 columns system. The columns have several dimensions and many interesting modifiers;
 
 **More detailed documentation will be at the `beta` release stage.**
+
+## Build and modify
+In current stage our grid have a simple build system. It is enough to have an established `Nodejs` and `npm`.
+
+At first:
+`git clone https://github.com/DirtyCSS/dirtycss-grid.git` or your fork.
+
+Then:
+`yarn` or `npm install`
+
+Build SCSS sources code:
+`gulp styles`
