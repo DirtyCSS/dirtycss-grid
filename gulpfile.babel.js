@@ -25,16 +25,11 @@ gulp.task('styles', () => {
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe($.cssnano())
+    .pipe($.rename({
+      suffix: '.min'
+    }))
     .pipe(gulp.dest('dist'));
 });
-
-gulp.task('pug', () =>
-  gulp.src('_pug/index.pug')
-    .pipe($.pug({
-       pretty: '\t'
-    }))
-    .pipe(gulp.dest('example/'))
-);
 
 gulp.task('serve', ['pug', 'styles'], () => {
   browserSync({
@@ -44,7 +39,6 @@ gulp.task('serve', ['pug', 'styles'], () => {
   });
 
   gulp.watch('src/**/*.scss', ['styles', reload]);
-  gulp.watch('_pug/**/*.pug', ['pug', reload]);
 });
 
 gulp.task('clean', () =>
