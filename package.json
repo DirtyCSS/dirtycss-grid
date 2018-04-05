@@ -1,8 +1,9 @@
 {
   "name": "dirtycss-grid",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "CSS grid framework based on flexbox and grid layouts",
+  "style": "dist/css/dirtycss-grid.min.css",
+  "main": "dist/css/dirtycss-grid.min.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,13 +11,20 @@
     "type": "git",
     "url": "git+https://github.com/DirtyCSS/dirtycss-grid.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Holts Stanislav",
+  "license": "MIT",
+  "keywords": [
+    "html",
+    "framework",
+    "flexbox",
+    "grid",
+    "css"
+  ],
   "bugs": {
     "url": "https://github.com/DirtyCSS/dirtycss-grid/issues"
   },
   "homepage": "https://github.com/DirtyCSS/dirtycss-grid#readme",
-  "dependencies": {
+  "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "browser-sync": "^2.23.6",
