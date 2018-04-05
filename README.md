@@ -31,6 +31,7 @@ Rows are wrappers for columns. Each column has horizontal padding (called a gutt
 Rows contain the main flex styles for aligning the columns.
 
 **Gutter modifiers:**
+
 Provides different gutter to row and cols.
 
 * `.row--sm` - small gutter (5px)
@@ -63,10 +64,30 @@ Provides different gutter to row and cols.
 In a grid layout, content must be placed within columns and only columns may be immediate children of rows. Thanks to flexbox, grid columns without a specified width will automatically layout as equal width columns.
 
 **Basic `.col`:**
+
 A column without any modifiers has an automatic width. If a row uses one column, it occupies the width of the entire block, if there are from 2 to 12 columns in the line, then the width of the columns will be the same relative to each other.
 
 **Column sizes:**
 
+To ensure the responsiveness of the columns, we use modifiers: `xs, sm, md, lg, xl`, where is a `media queries` breakpoints. Below is a list of column modifiers and breakpoints points used in our grid system.
+
+* `.col--xs-1` - `.col--xs-12` - extra small, from `0` and above
+* `.col--sm-1` - `.col--sm-12`  - small, from `576px` and above
+* `.col--md-1` - `.col--md-12` - medium, from `768px` and above
+* `.col--lg-1` - `.col--lg-12` - large, from `992px` and above
+* `.col--xl-1` - `.col--xl-12` - large, from `1200px` and above
+
+**Changing the order of the columns:**
+
+Also in our system, you can change the order of the columns using modifiers. To do this, add a modifier with the sequence number for the column.
+
+* `.col--order-1` - `.col--order-12`
+
+**Column modifiers:**
+
+* `.col--top` - align self top
+* `.col--middle` - align self middle
+* `.col--bottom` - align self bottom
 
 ## Build and modify
 In current stage our grid have a simple build system. It is enough to have an established `Nodejs` and `npm`.
