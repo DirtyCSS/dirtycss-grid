@@ -30,11 +30,43 @@ Rows are wrappers for columns. Each column has horizontal padding (called a gutt
 
 Rows contain the main flex styles for aligning the columns.
 
-**Modifiers:**
+**Gutter modifiers:**
+Provides different gutter to row and cols.
+
 * `.row--sm` - small gutter (5px)
 * `.row--md` - medium gutter (15px)
 * `.row--lg` - large gutter (30px)
 * `.row--xl` - xl gutter (50px)
+
+**Vertical alignment modifiers:**
+
+* `.row--top` - aligning columns by top
+* `.row--middle` - aligning columns by center
+* `.row--bottom` - aligning columns by bottom
+
+**Horizontal alignment modifiers:**
+
+* `.row--left` - aligning columns by left
+* `.row--center` - aligning columns by center
+* `.row--right` - aligning columns by right
+
+**Justify:**
+
+* `.row--space-between` - space between columns
+* `.row--space-around` - space around columns
+
+**Reverse order:**
+
+* `.row--reverse` - reverse column order
+
+### Columns
+In a grid layout, content must be placed within columns and only columns may be immediate children of rows. Thanks to flexbox, grid columns without a specified width will automatically layout as equal width columns.
+
+**Basic `.col`:**
+A column without any modifiers has an automatic width. If a row uses one column, it occupies the width of the entire block, if there are from 2 to 12 columns in the line, then the width of the columns will be the same relative to each other.
+
+**Column sizes:**
+
 
 ## Build and modify
 In current stage our grid have a simple build system. It is enough to have an established `Nodejs` and `npm`.
