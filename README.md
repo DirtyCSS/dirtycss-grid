@@ -11,7 +11,7 @@ Several ways for a quick start:
 * Clone repo - `$ git clone https://github.com/DirtyCSS/dirtycss-grid.git`
 
 ## Documentation
-In the current version is implemented a classic grid with a lot of flexible modifiers. 
+In the current version is implemented a classic grid with a lot of flexible modifiers.
 
 **Main supported browsers:**
 * IE 11+
@@ -20,7 +20,7 @@ In the current version is implemented a classic grid with a lot of flexible modi
 * Safari 7+
 
 ### Containers
-Containers provide a means to center and horizontally pad your site’s contents. 
+Containers provide a means to center and horizontally pad your site’s contents.
 
 * `.container` - base class, provide full-width with left and right inner indents.
 * `.container--strict` - this is `.container` modifier that provide responsive pixel width.
@@ -99,4 +99,4 @@ Then:
 `yarn` or `npm install`
 
 Build SCSS sources code:
-`gulp styles`
+`gulp`
