@@ -1,0 +1,18 @@
+// -----------------------------------------------------------------------------
+// Init parallax container
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 1px;
+}
+
+// -----------------------------------------------------------------------------
+// Init parallax sections
+.parallax__section {}
+
+// -----------------------------------------------------------------------------
+// Init parallax layers
+.parallax__layer {}
+
+// parallax layers modifiers
