@@ -1,5 +1,3 @@
-'use strict';
-
 import gulp from 'gulp';
 import del from 'del';
 import gulpLoadPlugins from 'gulp-load-plugins';
@@ -8,7 +6,7 @@ import browserSync from 'browser-sync';
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
-gulp.task('styles', () => {
+gulp.task('sass', () => {
   const AUTOPREFIXER_BROWSERS = [
     'ie >= 11',
     'ff >= 30',
@@ -24,12 +22,19 @@ gulp.task('styles', () => {
       precision: 10
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('minify', () => {
+  return gulp.src('dist/**/*.css')
     .pipe($.cssnano())
     .pipe($.rename({
       suffix: '.min'
     }))
     .pipe(gulp.dest('dist'));
-});
+})
+
+gulp.task('styles', $.sequence('sass', 'minify'));
 
 gulp.task('serve', ['pug', 'styles'], () => {
   browserSync({
@@ -42,5 +47,12 @@ gulp.task('serve', ['pug', 'styles'], () => {
 });
 
 gulp.task('clean', () =>
-  del(['dist/*', 'example/*'], {dot: true})
+  del(['dist/', 'example/'], {dot: true})
 );
+
+gulp.task('default', ['clean'], cb => {
+  $.sequence(
+    'styles',
+    cb
+  )
+});
