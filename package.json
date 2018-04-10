@@ -1,6 +1,6 @@
 {
   "name": "dirtycss-grid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CSS grid framework based on flexbox and grid layouts",
   "style": "dist/css/dirtycss-grid.min.css",
   "main": "dist/css/dirtycss-grid.min.css",
